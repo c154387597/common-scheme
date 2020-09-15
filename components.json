@@ -1,0 +1,9 @@
+{
+  "card": "./packages/card/card.vue",
+  "input": "./packages/input/input.vue",
+  "picker": "./packages/picker/picker.vue",
+  "skeleton": "./packages/skeleton/skeleton.vue",
+  "steps": "./packages/step/steps.vue",
+  "step-item": "./packages/step/step-item.vue",
+  "tabs": "./packages/tabs/v-tabs.vue"
+}

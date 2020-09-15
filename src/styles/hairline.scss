@@ -1,0 +1,38 @@
+@import './mixins/mixins.scss';
+
+$border-poses: top, left, right, bottom;
+
+@mixin hairline($color: $color, $poses: $border-poses) {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    @each $pos in $poses {
+      border-#{$pos}: 1px solid $color;
+      #{$pos}: 0;
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5),
+(min-device-pixel-ratio: 1.5) {
+  .hairline::after {
+    transform: scaleY(0.7);
+  }
+}
+ 
+@media (-webkit-min-device-pixel-ratio:2),
+(min-device-pixel-ratio: 2) {
+  .hairline::after {
+    transform: scaleY(0.5);
+  }
+}
+@media (-webkit-min-device-pixel-ratio:3),
+(min-device-pixel-ratio: 3) {
+  .hairline::after {
+    transform: scaleY(0.333333);
+  }
+}
